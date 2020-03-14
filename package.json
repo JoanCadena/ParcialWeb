@@ -1,0 +1,19 @@
+{
+  "name": "parcial",
+  "version": "1.0.0",
+  "description": "Solución parcial desarrollo web 2020-1",
+  "author": "JoanCadena",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "bootstrap-vue": "^2.0.0",
+    "bootstrap": "^4.1.3"
+  },
+  "devDependencies": {}
+}
