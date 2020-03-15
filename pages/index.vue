@@ -17,6 +17,7 @@
               v-model="usuario.tipoId"
               :options="tipoId"
               id="tipoId"
+              
             />
           </b-form-group>
 
@@ -93,6 +94,7 @@
             <!-- Botones para editar y eliminar usuarios de la lista -->
             <b-button size="sm" @click="cargarUsuario(row)" class="mr-2">Modificar</b-button>
             <b-button size="sm" @click="eliminarUsuario(row)" class="mr-2">Eliminar</b-button>
+            <b-button size="sm" @click="verEstado(row)" class="mr-2">Ver Estado</b-button>
           </template>
         </b-table>
 

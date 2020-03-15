@@ -18,7 +18,7 @@ export default {
             ],
             
             /** Parametros de formulario */
-            fields:["tipoId", "id", "nombre", "apellido", "correo", "peso", "estatura", "IMC", "estado"],
+            fields:["tipoId", "id", "nombre", "apellido", "correo", "peso", "estatura", "IMC", "acciones"],
             usuario: {
                 id: "",
                 nombre: "",
@@ -77,6 +77,8 @@ export default {
         },
         /** Toma la posicion de la aplicacion en el array y lo reemplaza por el objeto modificado */
         actualizarUsuario() {
+            
+            this.enEdicion = false;
             let posicion = this.lista_usuarios.findIndex(
                 usuario => usuario.id == this.usuario.id
             );
