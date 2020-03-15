@@ -77,7 +77,7 @@ export default {
             let user = this.usuario;
             let existe = this.lista_usuarios.find(x => user.id === x.id)
             if (existe) {
-                this.mostrarCubiertaEmergente();
+                this.mostrarEmergente();
                 return;
             } else {
             let aux = ((user.peso*100)/(user.estatura*user.estatura))*100
@@ -113,7 +113,10 @@ export default {
             let posicion = this.lista_usuarios.findIndex(
                 usuario => usuario.id == this.usuario.id
             );
-            this.lista_usuarios.splice(posicion, 1, this.usuario);
+            let user2 = this.usuario;
+            let aux2 = ((user2.peso*100)/(user2.estatura*user2.estatura))*100
+            user2.IMC = aux2.toFixed(2)
+            this.lista_usuarios.splice(posicion, 1, user2);
             this.usuario = {
                 id: "",
                 nombres: "",
