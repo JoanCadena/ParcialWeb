@@ -17,7 +17,7 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item :to="{name:'index'}">Crear Usuario</b-nav-item>
-            <b-nav-item :to="{name:'#'}">Lista Usuarios</b-nav-item>
+            <b-nav-item :to="{name:'info'}">Información IMC</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
