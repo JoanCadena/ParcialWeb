@@ -48,11 +48,7 @@ export default {
 
         },
         
-        removerEmergente(){
-            document.body.removeChild(document.getElementById('divEmergente'));
-            document.body.removeChild(document.getElementById('divMensaje'));
-        },
-
+        /** Muestra el mensaje emergente en la pagina */
         mostrarEmergente(){
             let divEmergente = document.createElement('div');
             divEmergente.setAttribute('id', 'divEmergente');
@@ -68,6 +64,12 @@ export default {
             divMensaje.onclick = this.removerEmergente;
 
             document.body.appendChild(divMensaje);
+        },
+
+        /** Remueve el mensaje emergente de la pagina */
+        removerEmergente(){
+            document.body.removeChild(document.getElementById('divEmergente'));
+            document.body.removeChild(document.getElementById('divMensaje'));
         },
 
         /** Almacena los datos obtenidos del formulario en un objeto aplicacion y lo guarda en el array */
