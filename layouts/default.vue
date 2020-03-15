@@ -26,7 +26,6 @@
               <b-form-input size="sm" class="mr-sm-2" placeholder="Buscar"></b-form-input>
               <b-button size="sm" class="my-2 my-sm-0" type="submit">Buscar</b-button>
             </b-nav-form>
-
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -39,6 +38,32 @@
 <style>
 .navbar.navbar-dark.bg-dark {
   background-color: blue !important;
+}
+
+.cubierta-emergente {
+  background-color: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.mensaje-emergente {
+  position: absolute;
+  background-color:red;
+  padding: 10px;
+  width: 150px;
+  height: 110px;
+  font-size: 2em;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
 }
 
 html {

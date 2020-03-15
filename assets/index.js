@@ -47,9 +47,37 @@ export default {
             this.usuario.estatura = "";
 
         },
+        
+        removerCubiertaEmergente(){
+            document.body.removeChild(document.getElementById('divEmergente'));
+            document.body.removeChild(document.getElementById('divMensaje'));
+        },
+
+        mostrarCubiertaEmergente(){
+            let divEmergente = document.createElement('div');
+            divEmergente.setAttribute('id', 'divEmergente');
+            divEmergente.setAttribute('class', 'cubierta-emergente');
+            document.body.appendChild(divEmergente);
+
+            let divMensaje = document.createElement('div');
+            let textoDivMensaje = document.createTextNode('Usuario ya existe');
+            divMensaje.appendChild(textoDivMensaje);
+            divMensaje.setAttribute('id', 'divMensaje');
+            divMensaje.setAttribute('class', 'mensaje-emergente');
+
+            divMensaje.onclick = this.removerCubiertaEmergente;
+
+            document.body.appendChild(divMensaje);
+        },
+
         /** Almacena los datos obtenidos del formulario en un objeto aplicacion y lo guarda en el array */
         crearUsuario() {
             let user = this.usuario;
+            let existe = this.lista_usuarios.find(x => user.id === x.id)
+            if (existe) {
+                this.mostrarCubiertaEmergente();
+                return;
+            } else {
             let aux = ((user.peso*100)/(user.estatura*user.estatura))*100
             user.IMC = aux.toFixed(2)
             this.lista_usuarios.push(user);
@@ -61,6 +89,7 @@ export default {
                 peso: "",
                 estatura: "",
                 acciones: true
+            }
             };
         },
         /** Busca la posicion del objeto dentro del array y lo elimina */
@@ -92,6 +121,6 @@ export default {
                 estatura: "",
                 acciones: true
             };
-        }
+        },
     }
 };

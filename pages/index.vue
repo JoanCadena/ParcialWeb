@@ -17,7 +17,7 @@
               v-model="usuario.tipoId"
               :options="tipoId"
               id="tipoId"
-              
+              required
             />
           </b-form-group>
 
@@ -28,6 +28,7 @@
               v-model="usuario.id"
               placeholder="Ingrese ID del Usuario"
               id="id"
+              required
             />
           </b-form-group>
 
@@ -38,6 +39,7 @@
               v-model="usuario.nombre"
               placeholder=" Ingrese nombre(s) del usuario"
               id="nombre"
+              required
             />
           </b-form-group>
 
@@ -48,6 +50,7 @@
               v-model="usuario.apellido"
               placeholder=" Ingrese apellido(s) del usuario"
               id="apellido"
+              required
             />
           </b-form-group>
 
@@ -58,6 +61,7 @@
               v-model="usuario.correo"
               placeholder="Ingrese email del usuario"
               id="correo"
+              required
             />
 
             <b-form-group label="Peso:" label-for="peso">
@@ -67,6 +71,7 @@
                 v-model="usuario.peso"
                 placeholder="Ingrese peso(Kg) del Usuario"
                 id="peso"
+                required
               />
             </b-form-group>
 
@@ -77,6 +82,7 @@
                 v-model="usuario.estatura"
                 placeholder="Ingrese estatura(cm) del Usuario"
                 id="estatura"
+                required
               />
             </b-form-group>
           </b-form-group>
@@ -87,7 +93,7 @@
           <b-button type="reset" variant="danger">Limpiar</b-button>
         </b-form>
         <br />
-        
+
         <!-- Tabla de usuarios -->
         <b-table striped hover :items="lista_usuarios" :fields="fields">
           <template v-slot:cell(acciones)="row">
@@ -97,7 +103,6 @@
             <b-button size="sm" @click="verEstado(row)" class="mr-2">Ver Estado</b-button>
           </template>
         </b-table>
-
       </b-container>
     </div>
   </div>
