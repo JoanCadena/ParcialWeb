@@ -54,16 +54,15 @@
 
 .mensaje-emergente {
   position: absolute;
-  background-color:red;
+  background-color:chartreuse;
   padding: 10px;
-  width: 150px;
+  width: 145px;
   height: 110px;
   font-size: 2em;
   z-index: 11;
   top: 50%;
   left: 50%;
-  margin-left: -100px;
-  margin-top: -100px;
+  margin-left: -120px;
 }
 
 html {

@@ -48,12 +48,12 @@ export default {
 
         },
         
-        removerCubiertaEmergente(){
+        removerEmergente(){
             document.body.removeChild(document.getElementById('divEmergente'));
             document.body.removeChild(document.getElementById('divMensaje'));
         },
 
-        mostrarCubiertaEmergente(){
+        mostrarEmergente(){
             let divEmergente = document.createElement('div');
             divEmergente.setAttribute('id', 'divEmergente');
             divEmergente.setAttribute('class', 'cubierta-emergente');
@@ -65,7 +65,7 @@ export default {
             divMensaje.setAttribute('id', 'divMensaje');
             divMensaje.setAttribute('class', 'mensaje-emergente');
 
-            divMensaje.onclick = this.removerCubiertaEmergente;
+            divMensaje.onclick = this.removerEmergente;
 
             document.body.appendChild(divMensaje);
         },
