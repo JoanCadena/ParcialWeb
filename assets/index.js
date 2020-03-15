@@ -5,9 +5,8 @@ export default {
             /** Determina si la aplicacion se encuentra en estado de edicion */
             enEdicion: false,
             /** Array de usuarios */
-            lista_usuarios: [
-
-            ],
+            lista_usuarios: null,
+            
             /** Opciones de identificación en la lista desplegable */
             tipoId: [
                 { text: "Seleccione tipo de identificación", value: null },
@@ -46,6 +45,14 @@ export default {
             this.usuario.peso = "";
             this.usuario.estatura = "";
 
+        },
+
+        cargarLS(){
+            if (localStorage.getItem("users-vue")) {
+                this.lista_usuarios = JSON.parse(localStorage.getItem("users-vue"));
+            } else {
+                this.lista_usuarios = [];
+            }
         },
 
         /** Muestra el mensaje emergente en la pagina */
@@ -92,15 +99,18 @@ export default {
                     estatura: "",
                     acciones: true
                 }
+                localStorage.setItem('users-vue', JSON.stringify(this.lista_usuarios));
             };
+            
         },
         /** Busca la posicion del objeto dentro del array y lo elimina */
         eliminarUsuario({ item }) {
             let posicion = this.lista_usuarios.findIndex(usuario => usuario.id == item.id);
             this.lista_usuarios.splice(posicion, 1);
+            localStorage.setItem('users-vue', JSON.stringify(this.lista_usuarios));
         },
         /** Llena los campos del formulario con los datos de la aplicacion para luego ser editados, segun la fila
-    en que se encuentre */
+        en que se encuentre */
         cargarUsuario({ item }) {
             let aux = this.lista_usuarios.find(usuario => usuario.id == item.id);
             this.enEdicion = true;
@@ -125,11 +135,11 @@ export default {
                 estado = "Su estado actual es: Obesidad G2"
             } else if (xd < 50) {
                 estado = "Su estado actual es: Obesidad G3"
-            } else if (xd > 50) {
+            } else if (xd < 150) {
                 estado = "Su estado actual es: Obesidad Extrema"
             } else {
                 estado = "Por favor verifique e ingrese bien los datos"
-            } 
+            }
             this.mostrarEmergente(estado);
         },
 
@@ -153,6 +163,8 @@ export default {
                 estatura: "",
                 acciones: true
             };
+            localStorage.setItem('users-vue', JSON.stringify(this.lista_usuarios));
         },
-    }
+    },
+    
 };

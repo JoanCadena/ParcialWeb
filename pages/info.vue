@@ -18,13 +18,14 @@
             la Sangre de los Estados Unidos (NHLBI), el sobrepeso se define como un IMC de más de 25.
             Se considera que una persona es obesa si su IMC es superior a 30.
             <br />
+          </p>
+            <hr/>
             <br />
             <img
               src="https://obesiout.com/wp-content/uploads/2018/01/infograf%C3%ADa-obesidad.png"
               class="d-block w-100"
               alt="..."
             />
-          </p>
           <br />
           <br />
         </div>

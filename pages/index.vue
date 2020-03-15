@@ -91,6 +91,7 @@
           <b-button type="submit" variant="success" v-if="!enEdicion">Crear Usuario</b-button>
           <b-button @click="actualizarUsuario()" variant="success" v-else>Actualizar Usuario</b-button>
           <b-button type="reset" variant="danger">Limpiar</b-button>
+          <b-button @click="cargarLS()" variant="primary">Cargar lista</b-button>
         </b-form>
         <br />
 
