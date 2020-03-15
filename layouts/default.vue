@@ -1,10 +1,46 @@
 <template>
   <div>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="dark">
+        <img
+          src="https://www.marysillero.com/wp-content/uploads/2018/04/unnamed.png"
+          fluid
+          alt="Responsive image"
+          height="50px"
+          width="50px"
+        />
+        <b-navbar-brand href="#"></b-navbar-brand>
+        <b-navbar-brand href>IMC</b-navbar-brand>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item :to="{name:'index'}">Crear Usuario</b-nav-item>
+            <b-nav-item :to="{name:'#'}">Lista Usuarios</b-nav-item>
+          </b-navbar-nav>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <b-nav-form>
+              <b-form-input size="sm" class="mr-sm-2" placeholder="Buscar"></b-form-input>
+              <b-button size="sm" class="my-2 my-sm-0" type="submit">Buscar</b-button>
+            </b-nav-form>
+
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+
     <nuxt />
   </div>
 </template>
 
 <style>
+.navbar.navbar-dark.bg-dark {
+  background-color: blue !important;
+}
+
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
