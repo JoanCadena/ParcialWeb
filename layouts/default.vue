@@ -56,8 +56,8 @@
   position: absolute;
   background-color:chartreuse;
   padding: 10px;
-  width: 145px;
-  height: 110px;
+  width: 250px;
+  height: 300x;
   font-size: 2em;
   z-index: 11;
   top: 50%;
