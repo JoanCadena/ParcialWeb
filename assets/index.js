@@ -1,4 +1,4 @@
-/** Codigo .js para la pagina index.vue */
+/** Codigo .js para la pagina de index.vue */
 export default {
     data() {
         return {
